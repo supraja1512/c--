@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+///constructor and destructor
+class Room
+{
+    int l;
+    int b;
+public:
+   Room()
+   {
+       l=0;
+       b=0;
+   }
+   Room(int s,int t)
+   {
+       l=s;
+       b=t;
+   }
+   int getvalue()
+   {
+       return l;
+   }
+   int getvalue1()
+   {
+       return b;
+   }
+   int area()
+   {
+       return l*b;
+   }
+   ~Room()
+   {
+       //destructor called when the object is out of scope.
+       cout<<"destructor called";
+   }
+   
+};
+int main()
+{
+    Room r1(3,4);
+    cout<<r1.area()<<endl;
+}
