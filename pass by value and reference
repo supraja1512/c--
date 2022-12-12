@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+int square(int);
+void squareref(int &);
+int main()
+{
+    int a,b;
+    cin>>a;
+    cin>>b;
+    cout<<square(a);
+    squareref(b);
+    cout<<b;
+   
+}
+int square(int a)  //pass by value
+{
+    return a*a;
+}
+void squareref(int &b) //pass by reference
+{
+    b=b*b;
+    
+}
