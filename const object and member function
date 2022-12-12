@@ -1,0 +1,29 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class Book
+{
+    private:
+      string bookname;
+      string author;
+    public:
+      Book(string name,string an)
+      {
+          bookname=name;
+          author=an;
+      }
+      string getbookname() const
+      {
+          return bookname;
+      }
+      string getauthor() const
+      {
+          return author;
+      }
+};
+int main()
+{
+    const Book b1("abc","xyz");
+    cout<<b1.getbookname()<<endl;
+    cout<<b1.getauthor();
+}
