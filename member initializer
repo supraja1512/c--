@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class Date
+{
+private:
+    int day;
+    int month;
+    int year;
+public:
+   Date(int d=1,int m=1,int y=2000)
+   {
+       day=d;
+       month=m;
+       year=y;
+   }
+   string getdate()
+   {
+       return to_string(day)+'/'+to_string(month)+'/'+to_string(year);
+   }
+};
+class Emp
+{
+    private:
+      string name;
+      Date dob;
+    public:
+      Emp(string n,int d,int m,int y):name(n),dob(d,m,y)
+      {
+          
+      }
+      string getdob()
+      {
+        return dob.getdate();   
+      }
+};
+int main()
+{
+    Emp s1("ram",2,5,2005);
+    cout<<s1.getdob();
+}
