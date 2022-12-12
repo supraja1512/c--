@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+int square(int a);
+int main()
+{
+    int s;
+    cin>>s;
+    cout<<square(s);
+}
+inline int square(int a)
+{
+    return a*a;
+}
