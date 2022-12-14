@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+class Date
+{
+    int hour;
+    int min;
+public:
+   Date(int h,int m)
+   {
+       hour=h;
+       min=m;
+   }
+   void operator++()
+   {
+       min++;
+       if(min>=60)
+       {
+       hour++;
+       min-=60;
+       }
+   }
+   void display()
+   {
+       cout<<hour<<":"<<min;
+       
+   }
+};
+int main()
+{
+    Date d1(6,30);
+    ++d1;
+    d1.display();
+}
