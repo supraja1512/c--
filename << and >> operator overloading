@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+class Room
+{
+private:
+   int len;
+   int brd;
+public:
+   friend istream& operator>>(istream &input,Room &r)
+   {
+       input>>r.len>>r.brd;
+       return input;
+   }
+   friend ostream& operator<<(ostream &output,Room &s)
+   {
+       output<<s.len<<"+i"<<s.brd;
+       return output;
+   }
+};
+int main()
+{
+    Room r1;
+    cin>>r1;//----->operator>>(cin,r1); 
+    cout<<r1;///---->operator<<(cout,r1)
+}
