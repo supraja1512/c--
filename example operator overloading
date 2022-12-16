@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+class Date
+{
+private:
+   int date;
+   int mon;
+   int year;
+public:
+   friend istream& operator>>(istream &input,Date &d)
+   {
+       input>>d.date>>d.mon>>d.year;
+       return input;
+   }
+   friend ostream& operator<<(ostream &output,Date &d)
+   {
+       output<<d.date<<d.mon<<d.year;
+       return output;
+   }
+   void print()
+   {
+       cout<<date<<'/'<<mon<<'/'<<year;
+   }
+};
+int main()
+{
+    Date d1;
+    cin>>d1;//---->operator>>(cin,d1)
+    //cout<<d1;//----->operator<<(cout,d1)
+    d1.print();
+}
