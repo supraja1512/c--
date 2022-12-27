@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+class Employee
+{
+private:
+     int empId;
+     string name;
+     double salary;
+public:
+    Employee(int id,string n,double sal=0)
+    {
+        empId=id;
+        name=n;
+        salary=sal;
+    }
+    void setsalary(double sal)
+    {
+        salary=sal;
+    }
+    int getsal()
+    {
+        return salary;
+    }
+    void print()
+    {
+        cout<<"employee id:"<<empId<<endl;
+        cout<<"name:"<<name<<endl;
+        cout<<"salary:"<<salary<<endl;
+    }
+    
+};
+class Developer:public Employee
+{
+private:
+    int workhour;
+public:
+   Developer(int Id,string n,int wh):Employee(Id,n)
+   {
+       workhour=wh;
+       setsalary();
+   }
+   void setsalary()
+   {
+       Employee::setsalary(workhour*500);
+   }
+};
+int main()
+{
+    Employee e1(2,"supraja",15000);
+    e1.print();
+    Developer d1(4,"kamatchi",140);
+    d1.print();
+}
